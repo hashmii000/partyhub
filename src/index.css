@@ -1,0 +1,114 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import "tailwindcss";
+
+.nav-item {
+  @apply block px-4 py-3 text-sm font-medium hover:text-red-700;
+}
+
+.dropdown-box {
+  @apply absolute hidden group-hover:block bg-white shadow-lg border rounded w-48 mt-2 z-30;
+}
+
+.dropdown-link {
+  @apply block px-4 py-2 text-sm hover:bg-gray-100;
+}
+
+/* color css */
+.bg-primary {
+  background: linear-gradient(to right, #822da0, #c53084);  
+}
+
+.text-primary {
+  background: linear-gradient(to right, #822da0, #c53084);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; /* Firefox support */
+  color: transparent;      /* fallback */
+}
+
+
+
+body,
+a,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+placeholder,
+select,
+option,
+textarea {
+
+  font-family: "Open Sans", sans-serif !important;
+}
+
+
+body,
+button,
+input,
+select,
+textarea,
+p,
+li,
+a,
+.ast-button,
+.ast-custom-button {
+
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  font-size: 1rem !important;
+}
+
+.ast-button,
+placeholder,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+select,
+textarea .ast-custom-button {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+.ast-button,
+.ast-custom-button,
+body,
+p,
+button,
+input[type=button],
+input[type=submit],
+textarea {
+  line-height: 1.85714285714286 !important;
+}
+
+
+@media (max-width: 767px) {
+
+  body,
+  button,
+  input,
+  select,
+  textarea,
+  p,
+  li,
+  a,
+  .ast-button,
+  .ast-custom-button {
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 15px !important;
+
+  }
+}
+
+
+
