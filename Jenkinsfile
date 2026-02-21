@@ -1,14 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs "node"   // Jenkins NodeJS tool name
-    }
-
-    environment {
-        CI = "true"
-    }
-
     stages {
 
         stage('Checkout Code') {
@@ -17,34 +9,32 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build Docker Image') {
             steps {
-                bat 'npm ci'
+                bat 'docker build -t partyhub-app .'
             }
         }
 
-        stage('Build Application') {
+        stage('Stop Old Container') {
             steps {
-                bat 'npm run build'
+                bat 'docker stop partyhub-container || exit 0'
+                bat 'docker rm partyhub-container || exit 0'
             }
         }
 
-        stage('Archive Build Artifacts') {
+        stage('Run Docker Container') {
             steps {
-                archiveArtifacts artifacts: 'dist/**', fingerprint: true
+                bat 'docker run -d --name partyhub-container -p 8080:80 partyhub-app'
             }
         }
     }
 
     post {
         success {
-            echo 'Build completed successfully ✔'
+            echo 'Docker deployment successful 🚀'
         }
         failure {
             echo 'Build failed ❌'
-        }
-        always {
-            cleanWs()
         }
     }
 }

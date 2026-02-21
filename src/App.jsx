@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 
 import ScrollToTop from "./pages/ScrollTop";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import "./index.css";
 import FooterNew from "./components/FooterNew";
 
