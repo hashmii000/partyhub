@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                bat 'docker run -d --name partyhub-container -p 8080:80 partyhub-app'
+                bat 'docker run -d --name partyhub-container -p 8081:80 partyhub-app'
             }
         }
     }
