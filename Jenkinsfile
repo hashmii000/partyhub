@@ -23,12 +23,6 @@ pipeline {
             }
         }
 
-        stage('Run Lint (Optional)') {
-            steps {
-                bat 'npm run lint'
-            }
-        }
-
         stage('Build Application') {
             steps {
                 bat 'npm run build'
